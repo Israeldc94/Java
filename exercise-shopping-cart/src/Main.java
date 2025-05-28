@@ -7,13 +7,16 @@ public class Main {
     float productCost = 2.56f;
     float productPrice = 4.99f;
     int productQuantity = 78;
+    double totalCost = (productCost * productQuantity);
     float totalProfit = (productPrice * productQuantity);
     float trueProfit = (totalProfit - (productCost *productQuantity));
 
-        System.out.println("Total product cost: " + "$" + productCost * productQuantity);
+        System.out.println("Total product cost: " + "$" + totalCost);
+        double profitPerProduct = productPrice - productCost;
+        System.out.println("Profit per product: $" + profitPerProduct);
         System.out.println("Profit Margin: " + ((trueProfit / totalProfit) * 100) + "%");
         System.out.println("Profit: $" + trueProfit);
-
+        System.out.println("Bye");
 
 
         }
