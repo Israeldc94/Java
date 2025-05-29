@@ -23,6 +23,12 @@ public class Main {
         System.out.println("Depositing $500 to acc2...");
         acc2.deposit(500);
         acc1.display_Account();
+
+        //Part 4: Employee Tracking
+        new Employee("John");
+        new Employee("Jane");
+        new Employee("Mike");
+        System.out.println("Total Employees: " + Employee.getTotalEmployees());
     }
 }
 
