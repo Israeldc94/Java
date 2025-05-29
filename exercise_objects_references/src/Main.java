@@ -9,6 +9,14 @@ public class Main {
         car1.displayInfo();
         System.out.print("Car2: ");
         car2.displayInfo();
+
+        //Part 2: Book Library System
+        Book book1 = new Book("The Hobbit", "J.R.R Tolkien", true);
+        book1.displayBook();
+        book1.borrowBook();
+        book1.displayBook();
+
+
     }
 }
 
