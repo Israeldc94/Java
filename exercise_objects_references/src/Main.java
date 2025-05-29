@@ -16,7 +16,13 @@ public class Main {
         book1.borrowBook();
         book1.displayBook();
 
-
+        // Part 3: Shared Account Reference
+        BankAccount acc1 = new BankAccount("Alice", 1000.0);
+        BankAccount acc2 = acc1;
+        acc2.display_Account();
+        System.out.println("Depositing $500 to acc2...");
+        acc2.deposit(500);
+        acc1.display_Account();
     }
 }
 
