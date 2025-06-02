@@ -10,16 +10,16 @@ public class Main {
         System.out.println("What is your name? ");
         String name = console.nextLine();
         System.out.println("Hello " + name);
-        String mainMenu = ("Your journey begins in a room with three doors. Which one do you enter?" +
+        String mainMenu = ("You're in a room with three doors. Which one do you enter?" +
                 "\n1. the rotting wooden door" +
                 "\n2. the rusted metal door" +
                 "\n3. the gilded double doors" +
-                "Enter q to quit");
+                "\n Enter Q to quit");
         String room1 = "You find yourself in a rancid swamp. not a soul in sight. deep within the murk a glimmer catches your eye. " +
                 "You reach for it and find half a key";
         String room1Repeat = "You find yourself in a rancid swamp. You have been here before.";
         String room2 = "You find yourself in a smokey factory from the industrial era, standing in front of a forge. " +
-                "Inside the forge you see a glimmer." + "\nWhen you reach for the shine you are surprised to see your hand doesn't burn." +
+                "Inside the forge you see a glimmer." + "\nWhen you reach for the shine you are surprised to see your hand doesn't burn. " +
                 "You open your hand to reveal that the glimmer was a key.";
         String room2Repeat = "You find yourself in a smokey factory. You've been here before.";
 
@@ -61,6 +61,7 @@ public class Main {
                 case "Q":
                     keepGoing = false;
                     break;
+                    
                 default:
                     System.out.println("Invalid choice");
             }
