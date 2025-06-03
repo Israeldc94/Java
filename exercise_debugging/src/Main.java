@@ -12,7 +12,7 @@ public class Main {
         int factorialResult = factorial(5);
         System.out.println("Factorial of 5: " + factorialResult);
         System.out.println("Debugging Exercise Complete!");
-        
+
     }
 
     // Method to calculate sum of an array (contains a bug)
