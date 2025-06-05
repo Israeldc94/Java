@@ -5,6 +5,7 @@ public class Main {
         LockerService service = new LockerService(10);
         int choice;
         boolean keepRunning = true;
+
         //application loop
         while (keepRunning) {
             if (!service.lockersOccupied()) {
@@ -12,7 +13,7 @@ public class Main {
             } else {
                 choice = io.getInt(io.mainMenufull(), 1, 4);
             }
-
+            //menu decision tree
             switch (choice) {
                 case 1:
                     Result result = service.rentLocker();

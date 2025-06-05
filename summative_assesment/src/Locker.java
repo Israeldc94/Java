@@ -12,6 +12,10 @@ public class Locker {
         this.isRented = isRented;
     }
 
+    public int getLockerNumber(){
+        return this.lockerNumber;
+    }
+
     public boolean isRented(){
         return isRented;
     }

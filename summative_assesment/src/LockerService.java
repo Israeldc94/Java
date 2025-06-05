@@ -4,8 +4,6 @@ public class LockerService {
     Random random = new Random();
     IO io = new IO();
 
-    int randomNumber = random.nextInt(90) + 10;
-
     private Locker[] lockers;
 
     public LockerService(int capacity) {
@@ -16,9 +14,6 @@ public class LockerService {
         }
     }
 
-    public Locker[] getLockerList() {
-        return lockers;
-    }
 
     public Result rentLocker() {
         for (int i = 0; i < lockers.length; i++) {
