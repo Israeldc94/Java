@@ -14,7 +14,7 @@ public class IO {
         try {
             result = Integer.parseInt(resultStr);
             if (result < min || result > max) {
-                print("That locker does not exist");
+                print("That option does not exist");
             } else {
                 return result;
             }
@@ -48,5 +48,11 @@ public class IO {
     }
     public void print(String message) {
         System.out.println(message);
+    }
+    public String mainMenu(){
+        return "What would you like to do next? \n\t\t 1. Rent a locker \n\t\t 2.Access a locker \n\t\t 3.Release a locker";
+    }
+    public String mainMenufull(){
+        return "What would you like to do next? \n\t\t 1. (All lockers are occupied.) \n\t\t 2. Access a locker \n\t\t 3. Release a locker";
     }
 }
