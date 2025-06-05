@@ -5,6 +5,7 @@ public class Main {
         LockerService service = new LockerService(10);
         int choice;
         boolean keepRunning = true;
+        //application loop
         while (keepRunning) {
             if (!service.lockersOccupied()) {
                 choice = io.getInt(io.mainMenu(), 1, 4);
