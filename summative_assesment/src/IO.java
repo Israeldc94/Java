@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class IO {
     private final Scanner console;
 
-    //allows the use of IO in other files and is the one place where Scanner(System.in) is called
+    //allows the use of IO in other files and is the one place where Scanner(System.in) is called. We initialized it to console.
     public IO() {
         this.console = new Scanner(System.in);
     }
@@ -62,7 +62,7 @@ public class IO {
     }
 
     //establishes the main menu displayed if all lockers are rented
-    public String mainMenufull(){
+    public String mainMenuFull(){
         return "\nWhat would you like to do next? \n\t\t 1. (All lockers are occupied.) \n\t\t 2. Access a locker \n\t\t 3. Release a locker \n\t\t --- \n\t\t 4. Exit";
     }
 }

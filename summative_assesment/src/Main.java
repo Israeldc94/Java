@@ -13,7 +13,7 @@ public class Main {
             if (!service.lockersOccupied()) {
                 choice = io.getInt(io.mainMenu(), 1, 4);
             } else {
-                choice = io.getInt(io.mainMenufull(), 1, 4);
+                choice = io.getInt(io.mainMenuFull(), 1, 4);
             }
             //menu decision tree
             switch (choice) {

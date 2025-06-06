@@ -2,7 +2,7 @@
 
 
 public class Locker {
-    private int lockerNumber;
+    private final int lockerNumber;
     private String pinNumber;
     private boolean isRented;
 

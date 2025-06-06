@@ -3,16 +3,13 @@ import java.util.Scanner;
 public class calculations_and_utils {
 
 
-    public calculations_and_utils(){
-        Scanner console = new Scanner(System.in);
-    }
-
-    public static double getDepositAmt(){
+    public DepositInfo getDepositInfo(){
     String paycheckStr = promptString("Enter paycheck amount: ");
     String pulledAmtStr = promptString(("Enter pulled amount this period"));
-        int paycheck = Integer.parseInt(paycheckStr);
+        double paycheck = Double.parseDouble(paycheckStr);
         int pulledAmount = Integer.parseInt(pulledAmtStr);
-        return (paycheck * .75) + pulledAmount;
+        return new DepositInfo(paycheck, pulledAmount);
+
     }
 
     public static String promptString(String message) {
@@ -21,12 +18,15 @@ public class calculations_and_utils {
         return console.nextLine();
     }
 
-    public static void printd(double amt) {
-        System.out.println(amt);
+    public void printD(double amt) {
+        System.out.printf("%.2f", amt);
+
     }
     public static void print(String message) {
         System.out.println(message);
 
 }
+
 }
+
 

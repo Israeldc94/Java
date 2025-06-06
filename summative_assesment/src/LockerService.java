@@ -86,7 +86,7 @@ public class LockerService {
                 return new Result(false, "\nLocker not found");
             }
 
-            //sets up a random 2 digit number and concatenates it with "00" to create a pin number
+            //sets up a random 2-digit number and concatenates it with "00" to create a pin
             public String setPinNumber () {
                 Random rand = new Random();
                 int randomNumber = rand.nextInt(90) + 10;
@@ -94,7 +94,7 @@ public class LockerService {
                 return pin;
             }
 
-            //checks if all lockers are rented we will use this to print our alternative menu optio
+            //checks if all lockers are rented we will use this to print our alternative menu option
             public boolean lockersOccupied () {
                 for (int i = 0; i < lockers.length; i++) {
                     if (!lockers[i].isRented()) {
