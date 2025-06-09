@@ -35,32 +35,25 @@ public class Main {
         String promoCode = null;
         while (!isConfirmed) {
 // Prompt for tax exempt
-            System.out.println("\nAre you tax-exempt? (y/n)");
-            String taxExempt = console.nextLine();
+           String taxExempt = promptUserForString("\n Are you tax exempt?");
 // Prompt for shipping
-            System.out.println("Shipping? (standard / overnight / two-day)");
-            shipping = console.nextLine();
+            shipping = promptUserForString("Shipping? (standard / overnight / two-day)");
+
 //Prompt for address
-            for (int i = 0; i < addresses.length; i++) {
-                System.out.println((i + 1) + ". " + addresses[i]);
-            }
+            displayChoices(addresses);
 
-            System.out.println("Enter your shipping address: ");
-            String address = console.nextLine();
-            addressIndex = Integer.parseInt(address);
+            addressIndex = promptUserForInt("Enter your shipping address: ");
 
-//prompt for size
-            // Prompt for Size
-            for (int i = 0; i < sizes.length; i++) {
-                System.out.println((i + 1) + ". " + sizes[i]);
-            }
-            System.out.println("Size?");
-            String size = console.nextLine();
-            sizeIndex = Integer.parseInt(size);
+
+
+// Prompt for Size
+            displayChoices(sizes);
+            sizeIndex = promptUserForInt("Size?");
+
 
 // Prompt for promo code
-            System.out.println("Promo code for free shipping?");
-            promoCode = console.nextLine();
+            promoCode = promptUserForString("Promo code for free shipping?");
+
 // Print details
             // Print details
             System.out.println("\nDetails:");
@@ -109,4 +102,24 @@ public class Main {
         System.out.println("Promo code: " + promoCode);
         System.out.println("Bye");
     }
+    private static void displayChoices(String[] choices) {
+        for (int i = 0; i < choices.length; i++) {
+            System.out.println(i + 1 + ": " + choices[i]);
+        }
+    }
+    private static String promptUserForString(String prompt) {
+        java.util.Scanner console = new
+                java.util.Scanner(System.in);
+        System.out.println(prompt);
+        return console.nextLine();
+    }
+    private static int promptUserForInt(String prompt) {
+        java.util.Scanner console = new
+                java.util.Scanner(System.in);
+        System.out.println(prompt);
+        return Integer.parseInt(console.nextLine());
+    }
+
+
+
 }
