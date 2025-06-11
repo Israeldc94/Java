@@ -101,8 +101,7 @@ public class LockerService {
         }
         return 0;
     }
-
-
+    
     //prompts the user for a pin and checks to make sure it is 4 characters
     public String getUserPin(){
         String pin =  io.getNonEmptyString("Enter your locker pin: ");

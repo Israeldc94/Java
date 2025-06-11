@@ -44,7 +44,6 @@ public class Main {
                     }
                     break;
 
-
                     //releases a locker for the user if the proper locker number and pin combination are provided
                 case RELEASE_LOCKER:
                     lockerNumber = service.getUserLockerNumber();
@@ -68,7 +67,6 @@ public class Main {
                 case EXIT:
                     keepRunning = false;
                     break;
-
             }
         }
     }
