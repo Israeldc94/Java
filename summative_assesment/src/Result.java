@@ -9,6 +9,10 @@ public class Result {
         this.message = message;
     }
 
+    public boolean isSuccess() {
+        return success;
+    }
+
     //returns the message in result when called
     public String getMessage(){
         return this.message;
