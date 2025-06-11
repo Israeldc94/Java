@@ -10,22 +10,23 @@ public class IO {
 
     //prompts the user for an integer within a range and validates the input
     public int getInt(String prompt, int min, int max) {
-        int result = 0;
+        int num = 0;
         print(prompt);
         String resultStr = console.nextLine();
         try {
-            result = Integer.parseInt(resultStr);
-            if (result < min || result > max) {
+            num = Integer.parseInt(resultStr);
+            if (num < min || num > max) {
                 print("\nThat option does not exist");
+                return num;
             } else {
-                return result;
+                return num;
             }
         } catch (NumberFormatException ex) {
             print("\nInvalid input. Please enter a valid number.");
         } catch (NullPointerException ex){
             print("\nInvalid input");
         }
-        return result;
+        return num;
     }
     //prompts the user for input and checks to see if its empty
     public String getNonEmptyString(String prompt) {
@@ -41,12 +42,10 @@ public class IO {
     }
 
     //prompts the user for a pin and checks to make sure it is 4 characters
-    public String getValidPin(String prompt) {
-        print(prompt);
-        String input = console.nextLine();
+    public String getValidPin(String input) {
         if (input.length() != 4) {
             print("\nPin must be 4 digits");
-            return null;
+            return "0";
         } else {
             return input;
         }

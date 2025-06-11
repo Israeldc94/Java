@@ -36,6 +36,7 @@ public class Locker {
 
     //allows for quick retrieval of a locker objects pin.
     public String getPinNumber(){
+
         return this.pinNumber;
     }
 
