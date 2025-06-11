@@ -33,7 +33,7 @@ public class LockerService {
     //This method allows user to access their locker by prompting for the locker number and pin. If there is an object in our list that matches the data entered the locker is opened.
 
     public Result accessLocker() {
-        int lockerNumber = io.getInt("Enter your locker number: ", 1, 10);
+        int lockerNumber = io.getInt("Enter your locker number: ", 1, lockers.length);
         for (int i = 0; i < lockers.length; i++) {
             Locker locker = lockers[i];
             if (locker.getLockerNumber() == lockerNumber) {
@@ -58,7 +58,7 @@ public class LockerService {
             After confirming with the user the locker is then released.
              */
             public Result releaseLocker () {
-                int lockerNumber = io.getInt("\nEnter your locker number: ", 1, 10);
+                int lockerNumber = io.getInt("\nEnter your locker number: ", 1, lockers.length);
                 for (int i = 0; i < lockers.length; i++) {
                     Locker locker = lockers[i];
                     if (locker.getLockerNumber() == lockerNumber)
