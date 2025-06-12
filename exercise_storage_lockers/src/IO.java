@@ -34,7 +34,7 @@ public class IO {
         input = console.nextLine();
         if (input.equals("")) {
             print("\nInvalid input");
-            return input;
+            return "0";
         } else {
             return input;
         }
@@ -49,13 +49,9 @@ public class IO {
 
     //establishes our main menu
     public String mainMenu(){
-        return "\nWhat would you like to do next? \n\t\t 1. Rent a locker \n\t\t 2.Access a locker \n\t\t 3.Release a locker \n\t\t --- \n\t\t 4. Exit";
+        return "\nWelcome to the Storage Locker Manager! \n\t\t 1. Add Locker \n\t\t 2. Remove Locker \n\t\t 3. Store Item \n\t\t 4. Retrieve Item \n\t\t 5. Display All lockers \n\t\t6. Exit ";
     }
 
-    //establishes the main menu displayed if all lockers are rented
-    public String mainMenuFull(){
-        return "\nWhat would you like to do next? \n\t\t 1. (All lockers are occupied.) \n\t\t 2. Access a locker \n\t\t 3. Release a locker \n\t\t --- \n\t\t 4. Exit";
-    }
 }
 
 
