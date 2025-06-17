@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class App
 {
     static IO io = new IO();
-    public Scanner console = new Scanner(System.in);
     static boolean isCurator;
     public static void main( String[] args ) {
         Artifact entered;
