@@ -17,7 +17,7 @@ public class App {
     private static final int CHECKOUT = 4;
     private static final int EXIT = 5;
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         boolean keepRunning = true;
 
         while (keepRunning) {
@@ -31,22 +31,31 @@ public class App {
                     break;
 
                 case REMOVE_AN_ITEM:
-                   String itemName =  io.getNonEmptyString("Enter the item you'd like to remove: ");
-                   Item item = cart.getItemByName(itemName);
-                   int quantity = io.getInt("How many would you like to remove?: ",  1, 1000);
-                   removeItem.execute(cart, item, quantity);
-                   break;
-
+                    if (!cart.getCart().isEmpty()) {
+                        String itemName = io.getNonEmptyString("Enter the item you'd like to remove: ");
+                        Item item = cart.getItemByName(itemName);
+                        if  (item == null) {
+                            io.print("Item not found in cart");
+                            break;
+                        }
+                        int quantity = io.getInt("How many would you like to remove?: ", 1, 1000);
+                        removeItem.execute(cart, item, quantity);
+                        io.print("item(s) have been removed.");
+                        break;
+                    } else {
+                        io.print("Your cart is empty");
+                        break;
+                    }
 
 
                 case ADD_AN_ITEM:
-                itemName =  io.getNonEmptyString("Enter the item you'd like to add: ");
-                double price = io.getDouble("Enter the price of the item: ");
-                quantity = io.getInt("How many would you like to add?: ", 1, 1000);
-                item = itemFactory.createItem(itemName, price);
-                addItem.execute(cart, item, quantity);
-                io.print("item(s) have been added");
-                break;
+                    String itemName = io.getNonEmptyString("Enter the item you'd like to add: ");
+                    double price = io.getDouble("Enter the price of the item: ");
+                    int quantity = io.getInt("How many would you like to add?: ", 1, 1000);
+                    Item item = itemFactory.createItem(itemName, price);
+                    addItem.execute(cart, item, quantity);
+                    io.print("item(s) have been added");
+                    break;
 
 
                 case CHECKOUT:
@@ -62,7 +71,7 @@ public class App {
                 default:
                     System.exit(0);
                     break;
-                }
+            }
         }
 
     }

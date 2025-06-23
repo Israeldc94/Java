@@ -27,22 +27,20 @@ public IO(){
 
     public int getInt(String prompt, int min, int max) {
         int num = 0;
-        print(prompt);
-        String resultStr = io.nextLine();
-        try {
-            num = Integer.parseInt(resultStr);
-            if (num < min || num > max) {
-                print("\nThat option does not exist");
-                return num;
-            } else {
-                return num;
+        while (true) {
+            print(prompt);
+            String resultStr = io.nextLine();
+            try {
+                num = Integer.parseInt(resultStr);
+                if (num < min || num > max) {
+                    print("\nThat option does not exist");
+                } else {
+                    return num;
+                }
+            } catch (NumberFormatException | NullPointerException ex) {
+                print("\nInvalid input. Please enter a valid number.");
             }
-        } catch (NumberFormatException ex) {
-            print("\nInvalid input. Please enter a valid number.");
-        } catch (NullPointerException ex) {
-            print("\nInvalid input");
         }
-        return num;
     }
 
         public void print(String message) {
@@ -58,17 +56,16 @@ public IO(){
 
     public double getDouble(String prompt) {
         double price = 0;
-        print(prompt);
-        String resultStr = io.nextLine();
-        try {
-            price = Double.parseDouble(resultStr);
+        while (true) {
+            print(prompt);
+            String resultStr = io.nextLine();
+            try {
+                price = Double.parseDouble(resultStr);
                 return price;
-        } catch (NumberFormatException ex) {
-            print("\nInvalid input. Please enter a valid price.");
-        } catch (NullPointerException ex) {
-            print("\nInvalid input");
+            } catch (NumberFormatException | NullPointerException ex) {
+                print("\nInvalid input. Please enter a valid price.");
+            }
         }
-        return price;
     }
 
 
