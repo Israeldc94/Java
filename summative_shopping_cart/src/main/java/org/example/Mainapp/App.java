@@ -33,6 +33,7 @@ public class App {
 
                 case REMOVE_AN_ITEM:
                         removeItem.execute();
+                        break;
 
                 case ADD_AN_ITEM:
                     addItem.execute();
