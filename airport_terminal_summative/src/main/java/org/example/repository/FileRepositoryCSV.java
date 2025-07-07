@@ -80,6 +80,7 @@ public class FileRepositoryCSV implements FileRepository {
 
     @Override
     public void setFilePath(String path) {
+        filePath = path;
 
     }
 

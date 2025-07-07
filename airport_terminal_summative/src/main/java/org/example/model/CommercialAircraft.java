@@ -8,14 +8,7 @@ public class CommercialAircraft extends Aircraft{
         this.capacity = capacity;
         this.fuelCapacity = fuelCapacity;
         this.airlineName = airlineName;
-    }
 
-    public String getAirlineName() {
-        return airlineName;
-    }
-
-    public void setAirlineName(String airlineName) {
-        this.airlineName = airlineName;
     }
     @Override
     public String getType() {

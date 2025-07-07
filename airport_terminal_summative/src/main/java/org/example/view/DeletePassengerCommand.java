@@ -41,14 +41,22 @@ public class DeletePassengerCommand implements Command {
             return;
         }
 
+        displayFlightInfo(passengers);
+        removePassengerFromFlight(passengers, flightNumber);
+
+        fileRepo.saveReservations(service, flights);
+    }
+
+    private void removePassengerFromFlight(ArrayList<Passenger> passengers, String flightNumber) {
+        int index = io.getInt("Enter passenger number to delete: ", 1, passengers.size());
+        Passenger removed = passengers.remove(index - 1);
+        io.print("Removed: " + removed.getName() +" from flight: " + flightNumber);
+    }
+
+    private void displayFlightInfo(ArrayList<Passenger> passengers) {
         for (int i = 0; i < passengers.size(); i++) {
             Passenger p = passengers.get(i);
             io.print((i+1) +". " + p.getName() + " | Passport: " + p.getPassportNumber());
         }
-        int index = io.getInt("Enter passenger number to delete: ", 1, passengers.size());
-        Passenger removed = passengers.remove(index - 1);
-        io.print("Removed: " + removed.getName() +" from flight: " + flightNumber);
-
-        fileRepo.saveReservations(service, flights);
     }
 }
