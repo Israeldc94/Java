@@ -1,0 +1,12 @@
+0010,Avocados,150,8.99,true,2025-07-30
+0006,Roma tomatoes,190,3.99,true,2025-07-30
+0007,Apples,200,1.99,true,2025-07-25
+0004,Diapers,50,16.99,false,
+0005,Water,93,3.99,false,
+0002,Toilet Paper,30,3.99,false,
+0003,Wipes,30,1.99,false,
+0000,Nonexistent Towels,0,3.99,false,
+0001,Paper Towels,30,5.99,false,
+9999,Expired Yogurt,10,2.99,true,2024-07-01
+0008,Milk,150,4.75,true,2025-07-25
+0009,Potatoes,100,5.99,true,2025-08-01
