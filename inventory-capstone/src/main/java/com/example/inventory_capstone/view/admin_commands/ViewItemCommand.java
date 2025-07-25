@@ -24,6 +24,7 @@ public class ViewItemCommand implements Command {
         viewInventory.execute();
 
         InventoryItem item = service.getItem(io.getNonEmptyString("Enter a product ID: "));
+        io.displaySingleItem(item);
 
     }
 }
