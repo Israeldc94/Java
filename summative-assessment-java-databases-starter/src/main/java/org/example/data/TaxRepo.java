@@ -11,4 +11,5 @@ public interface TaxRepo {
     // Tax records have a StartDate and an EndDate.
     // Return only the records where the given date falls in between the StartDate and EndDate inclusive.
     public Tax getCurrentTax(LocalDate dateOf) throws InternalErrorException, RecordNotFoundException;
+
 }
