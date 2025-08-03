@@ -6,6 +6,8 @@ import org.example.data.exceptions.RecordNotFoundException;
 import org.example.data.impl.Order.MySqlOrderRepo;
 import org.example.data.impl.Order.OrderMapper;
 import org.example.model.Order;
+import org.example.model.OrderItem;
+import org.example.model.Payment;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -122,32 +125,51 @@ public class MySqlOrderRepoTest {
 
     @Test
     void shouldDeleteOrder() throws InternalErrorException, RecordNotFoundException {
+        int id = 500;
+
+        List<OrderItem> items = new ArrayList<>();
+        OrderItem item = new OrderItem();
+        item.setOrderID(id);
+        item.setItemID(1);
+        item.setQuantity(2);
+        item.setPrice(new BigDecimal("15.00"));
+        items.add(item);
+
+        List<Payment> payments = new ArrayList<>();
+        Payment payment = new Payment();
+        payment.setOrderID(id);
+        payment.setPaymentTypeID(1);
+        payment.setAmount(new BigDecimal("37.40"));
+        payments.add(payment);
 
         Order order = new Order();
+
+        order.setOrderID(id);
         order.setServerID(1);
         order.setOrderDate(LocalDateTime.now());
         order.setSubTotal(new BigDecimal("30.00"));
         order.setTax(new BigDecimal("2.40"));
         order.setTip(new BigDecimal("5.00"));
         order.setTotal(new BigDecimal("37.40"));
+        order.setPayments(payments);
+        order.setItems(items);
 
-        Order toDelete = repo.addOrder(order);
-        Order added = repo.addOrder(toDelete);
-        int id = added.getOrderID();
+        repo.addOrder(order);
 
-
-        Order deleted = repo.deleteOrder(toDelete.getOrderID());
-
-
-        assertEquals(added.getOrderID(), deleted.getOrderID());
+        Order result = repo.addOrder(order);
+        assertNotNull(result);
 
 
         List<Order> remainingOrders = repo.getAllOrders();
         boolean stillExists = remainingOrders.stream()
                 .anyMatch(o -> o.getOrderID() == id);
-
         assertFalse(stillExists, "Order should be deleted but still exists.");
-    }
 
+
+        assertNull(order.getPayments(), "Payments for the deleted order should also be removed.");
+
+
+        assertNull(order.getItems(), "OrderItems for the deleted order should also be removed.");
+    }
 
 }
