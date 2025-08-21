@@ -43,8 +43,12 @@ public class CardService {
         if (card.getName() != null) {
             card.setName(card.getName().trim());
         }
-        if (card.getManaCost() != null) {
-            card.setManaCost(card.getManaCost().trim());
+        if (card.getManaCostText() != null) {
+            card.setManaCostText(card.getManaCostText().trim());
+        }
+
+        if (card.getManaValue() != null) {
+            card.setManaValue(); // no trimming needed for numbers
         }
         if (card.getColor() != null) {
             card.setColor(card.getColor().trim());

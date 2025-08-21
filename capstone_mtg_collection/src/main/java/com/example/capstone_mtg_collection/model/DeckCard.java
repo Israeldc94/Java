@@ -11,27 +11,15 @@ public class DeckCard {
         this.quantity = quantity;
     }
 
-    public int getDeckId() {
-        return deckId;
-    }
+    public int getDeckId() { return deckId; }
 
-    public void setDeckId(int deckId) {
-        this.deckId = deckId;
-    }
+    public void setDeckId(int deckId) { this.deckId = deckId; }
 
-    public int getCardId() {
-        return cardId;
-    }
+    public int getCardId() { return cardId; }
 
-    public void setCardId(int cardId) {
-        this.cardId = cardId;
-    }
+    public void setCardId(int cardId) { this.cardId = cardId; }
 
-    public int getQuantity() {
-        return quantity;
-    }
+    public int getQuantity() { return quantity; }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 }

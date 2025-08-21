@@ -10,6 +10,8 @@ public interface DeckRepository {
 
     Deck findById(int id);
 
+    int insertAndReturnId(Deck deck);
+
     int insert(Deck deck);
 
     int update(Deck deck);

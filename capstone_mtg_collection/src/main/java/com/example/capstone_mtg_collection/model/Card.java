@@ -4,17 +4,19 @@ package com.example.capstone_mtg_collection.model;
 public class Card {
     private int cardId;
     private String name;
-    private String manaCost;
+    private String manaCostText;
+    private Integer manaValue;
     private String color;
     private String typeLine;
     private boolean foil;
     private int quantityOwned;
     private String imageUrl;
 
-    public Card(int cardId, String name, String manaCost, String color, String typeLine, boolean foil, int quantityOwned, String imageUrl) {
+    public Card(int cardId, String name, String manaCostText, Integer manaValue, String color, String typeLine, boolean foil, int quantityOwned, String imageUrl) {
         this.cardId = cardId;
         this.name = name;
-        this.manaCost = manaCost;
+        this.manaCostText = manaCostText;
+        this.manaValue = manaValue;
         this.color = color;
         this.typeLine = typeLine;
         this.foil = foil;
@@ -38,12 +40,18 @@ public class Card {
         this.name = name;
     }
 
-    public String getManaCost() {
-        return manaCost;
+    public String getManaCostText() {
+        return manaCostText;
     }
 
-    public void setManaCost(String manaCost) {
-        this.manaCost = manaCost;
+    public void setManaCostText(String manaCostText) {
+        this.manaCostText = manaCostText;
+    }
+
+    public Integer getManaValue() { return manaValue; }
+
+    public void setManaValue() {
+        this.manaValue = manaValue;
     }
 
     public String getColor() {

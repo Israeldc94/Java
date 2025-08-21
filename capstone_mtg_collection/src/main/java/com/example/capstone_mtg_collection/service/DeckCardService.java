@@ -1,5 +1,6 @@
 package com.example.capstone_mtg_collection.service;
 
+import com.example.capstone_mtg_collection.model.Card;
 import com.example.capstone_mtg_collection.model.DeckCard;
 import com.example.capstone_mtg_collection.repository.DeckCardRepository;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class DeckCardService {
         this.repository = repository;
     }
 
-    public List<DeckCard> getCardsInDeck(int deckId) {
+    public List<Card> getCardsInDeck(int deckId) {
         return repository.findByDeckId(deckId);
     }
 

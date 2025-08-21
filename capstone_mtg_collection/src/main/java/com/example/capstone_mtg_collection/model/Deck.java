@@ -4,47 +4,31 @@ public class Deck {
     private int deckId;
     private String name;
     private String format;
-    private String description;
+    private String notes;
 
     public Deck() {
     }
 
-    public Deck(int deckId, String name, String format, String description) {
+    public Deck(int deckId, String name, String format, String notes) {
         this.deckId = deckId;
         this.name = name;
         this.format = format;
-        this.description = description;
+        this.notes = notes;
     }
 
-    public int getDeckId() {
-        return deckId;
-    }
+    public int getDeckId() { return deckId; }
 
-    public void setDeckId(int deckId) {
-        this.deckId = deckId;
-    }
+    public void setDeckId(int deckId) { this.deckId = deckId; }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
-    public String getFormat() {
-        return format;
-    }
+    public String getFormat() { return format; }
 
-    public void setFormat(String format) {
-        this.format = format;
-    }
+    public void setFormat(String format) { this.format = format; }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getNotes() { return notes; }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public void setDescription(String notes) { this.notes = notes; }
 }

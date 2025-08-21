@@ -15,7 +15,8 @@ public class CardMapper implements RowMapper<Card> {
         return new Card(
                 rs.getInt("card_id"),
                 rs.getString("name"),
-                rs.getString("mana_cost"),
+                rs.getString("mana_cost_text"),
+                rs.getString("mana_value") == null ? null : rs.getObject("mana_value", Integer.class),
                 rs.getString("color"),
                 rs.getString("type_line"),
                 rs.getBoolean("foil"),

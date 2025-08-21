@@ -36,12 +36,13 @@ public class CardJdbcRepository implements CardRepository{
     @Override
     public int insert(Card card) {
         String sql = """
-                INSERT INTO card (name, mana_cost, color, type_line, foil, quantity_owned, image_url)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                INSERT INTO card (name, mana_cost_text, mana_value, color, type_line, foil, quantity_owned, image_url)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """;
         return jdbcTemplate.update(sql,
                 card.getName(),
-                card.getManaCost(),
+                card.getManaCostText(),
+                card.getManaValue(),
                 card.getColor(),
                 card.getTypeLine(),
                 card.isFoil(),
@@ -55,7 +56,8 @@ public class CardJdbcRepository implements CardRepository{
         String sql = """
                 UPDATE card SET
                     name = ?,
-                    mana_cost = ?,
+                    mana_cost_text = ?,
+                    mana_value = ?,
                     color = ?,
                     type_line = ?,
                     foil = ?,
@@ -65,7 +67,8 @@ public class CardJdbcRepository implements CardRepository{
                 """;
         return jdbcTemplate.update(sql,
                 card.getName(),
-                card.getManaCost(),
+                card.getManaCostText(),
+                card.getManaValue(),
                 card.getColor(),
                 card.getTypeLine(),
                 card.isFoil(),

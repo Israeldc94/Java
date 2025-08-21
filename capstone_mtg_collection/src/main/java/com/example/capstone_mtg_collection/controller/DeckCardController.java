@@ -1,5 +1,6 @@
 package com.example.capstone_mtg_collection.controller;
 
+import com.example.capstone_mtg_collection.model.Card;
 import com.example.capstone_mtg_collection.model.DeckCard;
 import com.example.capstone_mtg_collection.service.DeckCardService;
 import org.springframework.http.HttpStatus;
@@ -20,8 +21,8 @@ public class DeckCardController {
 
     // GET all cards in a specific deck
     @GetMapping("/{deckId}")
-    public ResponseEntity<List<DeckCard>> getCardsInDeck(@PathVariable int deckId) {
-        List<DeckCard> cards = service.getCardsInDeck(deckId);
+    public ResponseEntity<List<Card>> getCardsInDeck(@PathVariable int deckId) {
+        List<Card> cards = service.getCardsInDeck(deckId);
         return cards.isEmpty()
                 ? new ResponseEntity<>(HttpStatus.NOT_FOUND)
                 : ResponseEntity.ok(cards);
