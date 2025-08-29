@@ -1,9 +1,13 @@
 package com.example.capstone_mtg_collection.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "model for join table in database to manage cards in a deck (many to many)")
 public class DeckCard {
     private int deckId;
     private int cardId;
     private int quantity;
+
 
     public DeckCard(int deckId, int cardId, int quantity) {
         this.deckId = deckId;

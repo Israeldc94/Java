@@ -1,5 +1,8 @@
 package com.example.capstone_mtg_collection.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "Deck metadata")
 public class Deck {
     private int deckId;
     private String name;

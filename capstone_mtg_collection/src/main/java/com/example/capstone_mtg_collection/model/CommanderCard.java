@@ -1,5 +1,8 @@
 package com.example.capstone_mtg_collection.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "Commander cards for Commander decks")
 public class CommanderCard {
     private int commanderCardId;
     private int deckId;

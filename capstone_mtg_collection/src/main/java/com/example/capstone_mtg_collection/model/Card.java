@@ -1,6 +1,9 @@
 package com.example.capstone_mtg_collection.model;
 
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "A card in your collection")
 public class Card {
     private int cardId;
     private String name;
@@ -11,6 +14,7 @@ public class Card {
     private boolean foil;
     private int quantityOwned;
     private String imageUrl;
+
 
     public Card(int cardId, String name, String manaCostText, Integer manaValue, String color, String typeLine, boolean foil, int quantityOwned, String imageUrl) {
         this.cardId = cardId;
